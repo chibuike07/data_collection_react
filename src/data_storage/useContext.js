@@ -5,6 +5,7 @@ const CollectionContext = React.createContext([
   () => {},
   () => {},
   () => {},
+  () => {},
 ]);
 
 const CollectionProvider = (props) => {
@@ -15,6 +16,7 @@ const CollectionProvider = (props) => {
     num: "",
     price: "",
     totalPrice: "",
+    keyHolder: null,
     collection: storageData ? JSON.parse(storageData) : [],
   });
 
@@ -33,6 +35,15 @@ const CollectionProvider = (props) => {
     }));
   };
 
+  //
+  const handleDeleteData = () => {
+    const parseStorage = JSON.parse(storageData);
+    const { keyHolder } = data;
+    let NotRemoved = parseStorage.filter((value, i) => i !== keyHolder);
+    console.log("res", NotRemoved);
+    const jsonState = JSON.stringify(NotRemoved);
+    localStorage.setItem("itemCollection", jsonState);
+  };
   useEffect(() => {
     const handleLocalStorage = () => {
       const { collection } = data;
@@ -48,7 +59,7 @@ const CollectionProvider = (props) => {
 
   return (
     <CollectionContext.Provider
-      value={[data, setData, handleChange, handleFormSubmit]}
+      value={[data, setData, handleChange, handleFormSubmit, handleDeleteData]}
     >
       {props.children}
     </CollectionContext.Provider>

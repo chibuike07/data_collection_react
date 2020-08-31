@@ -2,16 +2,26 @@ import React, { useContext } from "react";
 import { CollectionContext } from "./useContext";
 
 const Tbody = () => {
-  const handleGetId = ({ index = 1 }) => {
-    console.log("object", index);
+  const [data, setData] = useContext(CollectionContext);
+  const handleGetId = ({ index, values }) => {
+    const { item, num, price, totalPrice } = values;
+    setData((data) => ({
+      ...data,
+      item,
+      num,
+      price,
+      totalPrice,
+      keyHolder: index,
+    }));
+
+    // handleEditData({ index, values });
   };
-  const [data] = useContext(CollectionContext);
   const { collection } = data;
   return (
     <tbody>
       {collection &&
         collection.map((values, index) => (
-          <tr key={index} onClick={() => handleGetId({ index })}>
+          <tr key={index} onClick={() => handleGetId({ index, values })}>
             <td>{values.item}</td>
             <td>{values.num}</td>
             <td>{values.price}</td>

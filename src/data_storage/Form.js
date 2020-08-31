@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { CollectionContext } from "./useContext";
 
 const Form = () => {
-  const [data, , handleChange, handleFormSubmit] = useContext(
+  const [data, , handleChange, handleFormSubmit, handleEditData] = useContext(
     CollectionContext
   );
 
@@ -42,6 +42,7 @@ const Form = () => {
           <button>add</button>
         </div>
       </form>
+      <button onClick={handleEditData}>edit</button>
     </>
   );
 };
