@@ -4,14 +4,12 @@ import { CollectionContext } from "./useContext";
 const Thead = () => {
   const [data] = useContext(CollectionContext);
   const { collection } = data;
-
+  const headingArr = ["Item", "Num", "Price", "Total Price"];
   return (
     <thead>
       <tr>
         {collection &&
-          collection.map((value) =>
-            Object.keys(value).map((keys, index) => <th key={index}>{keys}</th>)
-          )}
+          headingArr.map((keys, index) => <th key={index}>{keys}</th>)}
       </tr>
     </thead>
   );
