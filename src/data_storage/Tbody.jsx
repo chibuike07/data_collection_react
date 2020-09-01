@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { CollectionContext } from "./useContext";
 
 const Tbody = () => {
-  const [data, setData] = useContext(CollectionContext);
+  const [data, setData] = useContext(CollectionContext); //destructuring context values
+
+  //handling the table row value
   const handleGetId = ({ index, values }) => {
     const { item, num, price, totalPrice } = values;
     setData((data) => ({
@@ -13,10 +15,9 @@ const Tbody = () => {
       totalPrice,
       keyHolder: index,
     }));
-
-    // handleEditData({ index, values });
   };
-  const { collection } = data;
+
+  const { collection } = data; //destructuring the collection from state
   return (
     <tbody>
       {collection &&

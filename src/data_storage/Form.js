@@ -1,14 +1,18 @@
 import React, { useContext } from "react";
-
 import { CollectionContext } from "./useContext";
 
 const Form = () => {
-  const [data, , handleChange, handleFormSubmit, handleEditData] = useContext(
-    CollectionContext
-  );
+  const [
+    data,
+    ,
+    handleChange,
+    handleFormSubmit,
+    handleDeleteData,
+    handleEditData,
+  ] = useContext(CollectionContext);
 
   return (
-    <>
+    <div>
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
@@ -42,8 +46,11 @@ const Form = () => {
           <button>add</button>
         </div>
       </form>
-      <button onClick={handleEditData}>edit</button>
-    </>
+      <div>
+        <button onClick={handleEditData}>edit</button>
+        <button onClick={handleDeleteData}>del</button>
+      </div>
+    </div>
   );
 };
 
