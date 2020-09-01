@@ -7,6 +7,7 @@ const CollectionContext = React.createContext([
   () => {},
   () => {},
   () => {},
+  () => {},
 ]);
 
 const CollectionProvider = (props) => {
@@ -26,6 +27,12 @@ const CollectionProvider = (props) => {
   //handling the formfield changes
   const handleChange = ({ target }) => {
     setData((data) => ({ ...data, [target.name]: target.value }));
+  };
+
+  //getting the total price of the data
+  const handleCalculate = ({ target }) => {
+    let total = Number(data.num) * Number(target.value);
+    return data.num ? setData((data) => ({ ...data, totalPrice: total })) : 0;
   };
 
   //setting input values to the state
@@ -86,6 +93,7 @@ const CollectionProvider = (props) => {
         handleFormSubmit,
         handleDeleteData,
         handleEditData,
+        handleCalculate,
       ]}
     >
       {props.children}

@@ -9,6 +9,7 @@ const Form = () => {
     handleFormSubmit,
     handleDeleteData,
     handleEditData,
+    handleCalculate,
   ] = useContext(CollectionContext);
 
   return (
@@ -33,14 +34,15 @@ const Form = () => {
           name="price"
           value={data.price}
           onChange={handleChange}
+          onInput={handleCalculate}
           required={true}
         />
         <input
           type="number"
           name="totalPrice"
           value={data.totalPrice}
-          onChange={handleChange}
           required={true}
+          readOnly={true}
         />
         <div>
           <button>add</button>
