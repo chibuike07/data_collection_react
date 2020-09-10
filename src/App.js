@@ -12,5 +12,4 @@ const App = () => {
     </CollectionProvider>
   );
 };
-//https://upmostly.com/tutorials/how-to-use-the-usecontext-hook-in-reacthttps: export default App;
 export default App;

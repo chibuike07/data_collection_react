@@ -10,6 +10,7 @@ const Form = () => {
     handleDeleteData,
     handleEditData,
     handleCalculate,
+    handleCache,
   ] = useContext(CollectionContext);
 
   return (
@@ -51,6 +52,7 @@ const Form = () => {
       <div>
         <button onClick={handleEditData}>edit</button>
         <button onClick={handleDeleteData}>del</button>
+        <button onClick={handleCache}>clear cache</button>
       </div>
     </div>
   );

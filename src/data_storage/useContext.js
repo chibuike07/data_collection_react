@@ -8,11 +8,12 @@ const CollectionContext = React.createContext([
   () => {},
   () => {},
   () => {},
+  () => {},
 ]);
 
 const CollectionProvider = (props) => {
   //getting and setting the localstorage data to the state on load
-  const storageData = localStorage.getItem("itemCollection");
+  let storageData = localStorage.getItem("itemCollection");
 
   //declaring of state values
   const [data, setData] = useState({
@@ -56,8 +57,10 @@ const CollectionProvider = (props) => {
       price,
       totalPrice,
     });
+
     const jsonState = JSON.stringify(parseStorage);
     localStorage.setItem("itemCollection", jsonState);
+    setData((data) => ({ ...data, collection: parseStorage }));
   };
 
   //handle deletion of data from the local storage
@@ -69,6 +72,10 @@ const CollectionProvider = (props) => {
     localStorage.setItem("itemCollection", jsonState);
   };
 
+  const handleCache = () => {
+    setData((data) => ({ ...data, collection: [] }));
+    return localStorage.setItem("itemCollection", []);
+  };
   useEffect(() => {
     //setting state form field data to local storage
     const handleLocalStorage = () => {
@@ -94,6 +101,7 @@ const CollectionProvider = (props) => {
         handleDeleteData,
         handleEditData,
         handleCalculate,
+        handleCache,
       ]}
     >
       {props.children}
