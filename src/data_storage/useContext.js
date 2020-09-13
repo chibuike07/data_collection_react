@@ -13,6 +13,7 @@ const CollectionContext = React.createContext([
 
 const CollectionProvider = (props) => {
   //getting and setting the localstorage data to the state on load
+
   let storageData = localStorage.getItem("itemCollection");
 
   //declaring of state values
@@ -76,6 +77,7 @@ const CollectionProvider = (props) => {
     setData((data) => ({ ...data, collection: [] }));
     return localStorage.setItem("itemCollection", []);
   };
+
   useEffect(() => {
     //setting state form field data to local storage
     const handleLocalStorage = () => {
