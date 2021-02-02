@@ -1,0 +1,6 @@
+.table {
+  flex: 0.5;
+  /* min-width: 300px; */
+  margin-top: 3rem;
+  overflow-x: scroll;
+}

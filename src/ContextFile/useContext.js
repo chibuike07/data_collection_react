@@ -22,6 +22,7 @@ const CollectionProvider = (props) => {
     num: "",
     price: "",
     totalPrice: "",
+    timestamp: "",
     keyHolder: null,
     collection: storageData ? JSON.parse(storageData) : [],
   });
@@ -34,29 +35,40 @@ const CollectionProvider = (props) => {
   //getting the total price of the data
   const handleCalculate = ({ target }) => {
     let total = Number(data.num) * Number(target.value);
-    return data.num ? setData((data) => ({ ...data, totalPrice: total })) : 0;
+
+    return data.num
+      ? setData((data) => ({
+          ...data,
+          totalPrice: total,
+          timestamp: new Date().toDateString(),
+        }))
+      : 0;
   };
 
   //setting input values to the state
   const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const { item, num, price, totalPrice } = data;
+    // e.preventDefault();
+    const { item, num, price, totalPrice, timestamp } = data;
     setData((data) => ({
       ...data,
-      collection: [...data.collection, { item, num, price, totalPrice }],
+      collection: [
+        ...data.collection,
+        { item, num, price, totalPrice, timestamp },
+      ],
     }));
   };
 
   //handling data edition from the localstorage
   const handleEditData = () => {
     const parseStorage = JSON.parse(storageData);
-    const { keyHolder, item, num, price, totalPrice } = data;
+    const { keyHolder, item, num, price, totalPrice, timestamp } = data;
     let matchIndex = parseStorage.findIndex((value, i) => i === keyHolder);
     parseStorage.splice(matchIndex, 1, {
       item,
       num,
       price,
       totalPrice,
+      timestamp,
     });
 
     const jsonState = JSON.stringify(parseStorage);
@@ -70,6 +82,8 @@ const CollectionProvider = (props) => {
     const { keyHolder } = data;
     let NotRemoved = parseStorage.filter((value, i) => i !== keyHolder);
     const jsonState = JSON.stringify(NotRemoved);
+
+    setData((data) => ({ ...data, collection: NotRemoved }));
     localStorage.setItem("itemCollection", jsonState);
   };
 

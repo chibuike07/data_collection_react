@@ -1,7 +1,7 @@
 import React from "react";
-import DataStatistics from "../src/data_storage/Data_statistics.js";
+import DataStatistics from "./Page/Data_statistics";
 
-import { CollectionProvider } from "../src/data_storage/useContext";
+import { CollectionProvider } from "./ContextFile/useContext";
 
 const App = () => {
   return (

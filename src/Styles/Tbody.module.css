@@ -1,0 +1,19 @@
+.tbody {
+  width: 100%;
+  flex: 1;
+  height: 100%;
+}
+
+.row {
+  border: 2px solid #173f5f;
+}
+
+.col {
+  flex: 0.22;
+  border: 2px solid #173f5f;
+  text-transform: capitalize;
+}
+
+.col:hover {
+  cursor: pointer;
+}

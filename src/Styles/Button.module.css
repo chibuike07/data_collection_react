@@ -1,0 +1,31 @@
+.container {
+  min-width: 300px;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.buton {
+  padding: 1%;
+  height: 100%;
+  flex: 0.2;
+  text-transform: capitalize;
+  border: none;
+  color: #fff;
+  background-color: #173f5f;
+  border-radius: 10%;
+  transition: transform 1s ease-in-out;
+}
+
+.buton:hover {
+  cursor: pointer;
+  transform: translateY(-5%);
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin-top: 2rem;
+  }
+}

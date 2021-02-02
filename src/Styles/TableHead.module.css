@@ -1,0 +1,14 @@
+.thead {
+  flex: 0.1;
+}
+
+.row {
+  flex: 1;
+  border: 2px solid #173f5f;
+}
+
+.col {
+  padding: 1%;
+  text-transform: uppercase;
+  border: 2px solid #173f5f;
+}
