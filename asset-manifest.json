@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/data_collection_react/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/data_collection_react/static/js/main.65940865.chunk.js",
-    "main.js.map": "/data_collection_react/static/js/main.65940865.chunk.js.map",
-    "runtime-main.js": "/data_collection_react/static/js/runtime-main.ca02172a.js",
-    "runtime-main.js.map": "/data_collection_react/static/js/runtime-main.ca02172a.js.map",
-    "static/js/2.803d9757.chunk.js": "/data_collection_react/static/js/2.803d9757.chunk.js",
-    "static/js/2.803d9757.chunk.js.map": "/data_collection_react/static/js/2.803d9757.chunk.js.map",
+    "main.css": "/data_collection_react/static/css/main.da04d289.chunk.css",
+    "main.js": "/data_collection_react/static/js/main.37a7faa2.chunk.js",
+    "main.js.map": "/data_collection_react/static/js/main.37a7faa2.chunk.js.map",
+    "runtime-main.js": "/data_collection_react/static/js/runtime-main.ebfe7509.js",
+    "runtime-main.js.map": "/data_collection_react/static/js/runtime-main.ebfe7509.js.map",
+    "static/js/2.612ce5e6.chunk.js": "/data_collection_react/static/js/2.612ce5e6.chunk.js",
+    "static/js/2.612ce5e6.chunk.js.map": "/data_collection_react/static/js/2.612ce5e6.chunk.js.map",
     "index.html": "/data_collection_react/index.html",
-    "precache-manifest.ac3cb342d20387f12e8bc23d658bd1ef.js": "/data_collection_react/precache-manifest.ac3cb342d20387f12e8bc23d658bd1ef.js",
+    "precache-manifest.7f330c8f25d315952a6cef56bc874314.js": "/data_collection_react/precache-manifest.7f330c8f25d315952a6cef56bc874314.js",
     "service-worker.js": "/data_collection_react/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/data_collection_react/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.803d9757.chunk.js.LICENSE.txt": "/data_collection_react/static/js/2.803d9757.chunk.js.LICENSE.txt"
+    "static/css/main.da04d289.chunk.css.map": "/data_collection_react/static/css/main.da04d289.chunk.css.map",
+    "static/js/2.612ce5e6.chunk.js.LICENSE.txt": "/data_collection_react/static/js/2.612ce5e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca02172a.js",
-    "static/js/2.803d9757.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.65940865.chunk.js"
+    "static/js/runtime-main.ebfe7509.js",
+    "static/js/2.612ce5e6.chunk.js",
+    "static/css/main.da04d289.chunk.css",
+    "static/js/main.37a7faa2.chunk.js"
   ]
 }
